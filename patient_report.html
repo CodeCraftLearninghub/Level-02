@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Health Report – Rahul Kumar</title>
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #ECF0F1;
+            --accent: #3498DB;
+            --success: #27ae60;
+            --danger: #e74c3c;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--secondary);
+            color: var(--primary);
+            line-height: 1.6;
+            padding: 1rem;
+        }
+        h1, h2, h3 {
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            flex: 1 1 300px;
+        }
+        .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .card h3 span {
+            font-size: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: var(--accent);
+            color: #fff;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .normal { color: var(--success); font-weight: 600; }
+        .abnormal { color: var(--danger); font-weight: 600; }
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(var(--success) 0% 55%, var(--danger) 55% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 auto;
+        }
+        .recommendations ul, .doctor-note ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        @media (max-width: 768px) {
+            .grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="card">
+            <h1>🩺 Patient Health Report</h1>
+            <p><strong>Name:</strong> Rahul Kumar</p>
+            <p><strong>Age:</strong> 35 years</p>
+        </header>
+
+        <section class="grid">
+            <!-- Vital Signs Card -->
+            <div class="card">
+                <h3>📊 Vital Signs & Lab Results</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Blood Pressure</td>
+                            <td class="abnormal">150/95 mmHg</td>
+                        </tr>
+                        <tr>
+                            <td>Heart Rate</td>
+                            <td class="normal">96 bpm</td>
+                        </tr>
+                        <tr>
+                            <td>Blood Sugar</td>
+                            <td class="abnormal">182 mg/dL</td>
+                        </tr>
+                        <tr>
+                            <td>Cholesterol</td>
+                            <td class="abnormal">245 mg/dL</td>
+                        </tr>
+                        <tr>
+                            <td>BMI</td>
+                            <td class="abnormal">29.8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Overall Health Score Card -->
+            <div class="card">
+                <h3>🏆 Overall Health Score</h3>
+                <div class="score-circle">55%</div>
+                <p style="text-align:center; margin-top:0.5rem;">Score based on current vitals and labs.</p>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="card recommendations">
+            <h3>💡 Recommendations</h3>
+            <ul>
+                <li>Adopt a low‑sodium diet to help lower blood pressure.</li>
+                <li>Engage in at least 150 minutes of moderate aerobic exercise per week.</li>
+                <li>Limit added sugars and refined carbs to improve blood glucose levels.</li>
+                <li>Increase intake of fiber‑rich foods (whole grains, legumes, vegetables).</li>
+                <li>Monitor weight; aim for a BMI < 25 through diet and activity.</li>
+                <li>Schedule routine blood work in 3 months to reassess lipid profile.</li>
+            </ul>
+        </section>
+
+        <!-- Doctor Recommendation Section -->
+        <section class="card doctor-note">
+            <h3>👨‍⚕️ Doctor’s Note</h3>
+            <ul>
+                <li>Start antihypertensive medication as per guideline (e.g., ACE inhibitor).</li>
+                <li>Consider metformin if fasting glucose remains >126 mg/dL on repeat testing.</li>
+                <li>Prescribe a statin to target LDL < 100 mg/dL.</li>
+                <li>Follow‑up appointment in 4 weeks to evaluate response to lifestyle changes and medication.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
