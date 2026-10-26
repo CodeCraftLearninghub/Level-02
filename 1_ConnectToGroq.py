@@ -1,7 +1,7 @@
 # pip3 install groq
 
 from groq import Groq
-client = Groq(api_key="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")
+client = Groq(api_key="")
 
 
 response = client.chat.completions.create(
